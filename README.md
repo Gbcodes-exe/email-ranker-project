@@ -1,18 +1,62 @@
-Email Ranking Engine: BM25 + Semantic Search (NLP)
+# Email Ranking Engine: BM25 + Semantic Search
 
-This project demonstrates a hybrid ranking system for emails using both BM25 keyword matching and semantic similarity with sentence embeddings. Built with Python, pandas, scikit-learn, rank_bm25, and SentenceTransformers, it simulates a realistic email inbox and ranks messages based on a user query.
+This project simulates an email inbox and ranks emails based on a user query using a hybrid approach: combining BM25 keyword relevance and semantic similarity from sentence embeddings.
 
-What It Does
+Built using Python, this project showcases practical applications of NLP in intelligent search and information retrieval systems.
 
-Generates a mock inbox with 100 simulated emails across categories like Work, Promo, Newsletter, Social, and Updates.
-Stores emails in a CSV format using pandas.
-Combines traditional BM25 scoring (for keyword relevance) with semantic similarity (for contextual understanding) to rank emails.
-Outputs the top emails most relevant to a natural language query, useful for intelligent inbox triage or automated email assistants.
+---
 
-Features
+## Features
 
-🔁 Simulated email data with realistic timestamps, labels, and actions (reply, archive, etc.)
-🧠 BM25-based retrieval using rank_bm25 for fast keyword matching.
-🤖 Semantic similarity using SentenceTransformers (all-MiniLM-L6-v2) for contextual ranking.
-⚖️ Hybrid scoring mechanism with tunable weight (alpha) to balance BM25 vs. semantic relevance.
-📈 Normalized ranking scores using MinMaxScaler for fair comparison across methods.
+- Generates a mock inbox with 100 realistic emails
+- Combines BM25 scoring with semantic similarity using Sentence Transformers
+- Normalizes scores and ranks emails based on user queries
+- Prints top-N most relevant emails for any given search term
+
+---
+
+## Technologies Used
+
+- Python 3
+- pandas, numpy
+- scikit-learn
+- rank_bm25
+- sentence-transformers (all-MiniLM-L6-v2)
+
+---
+
+## File Overview
+
+```bash
+EmailRanking/
+├── EmailRankerProject.ipynb   # Jupyter Notebook with full implementation
+├── mock_emails.csv            # Simulated inbox data
+├── requirements.txt           # Required Python packages
+└── README.md                  # Project documentation
+
+Setup Instructions
+
+Clone the repository:
+git clone https://github.com/your-username/EmailRanking.git
+cd EmailRanking
+
+Create a virtual environment (optional but recommended):
+python -m venv env
+source env/bin/activate   # or .\env\Scripts\activate on Windows
+Install dependencies:
+pip install -r requirements.txt
+
+Run the notebook:
+jupyter notebook notebook.ipynb
+
+Example Usage
+query = "project update"
+hybrid_rank(query)
+
+Output:
+
+Top 10 Emails for Query: 'project update'
+
+[Score: 0.984] : Project update | From: alice@company.com | Label: opened
+[Score: 0.821] : Urgent deadline | From: bob@company.com | Label: starred
+...
