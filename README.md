@@ -60,3 +60,11 @@ Top 10 Emails for Query: 'project update'
 [Score: 0.984] : Project update | From: alice@company.com | Label: opened
 [Score: 0.821] : Urgent deadline | From: bob@company.com | Label: starred
 ...
+
+
+Future Work
+
+Integrate with a real email client (e.g., Gmail API)
+Deploy as a web app using Flask or Streamlit
+Learn user preferences over time to personalize results
+
